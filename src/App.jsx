@@ -4,6 +4,8 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 // Importa a imagem do logo do Vite (arquivo na raiz pública)
 import viteLogo from "/vite.svg";
+// Importa o componente chamado Botao
+import Botao from "./components/Botao";
 
 function App() {
   // Cria um estado 'count' com valor inicial 0; setCount atualiza esse valor
@@ -34,10 +36,11 @@ function App() {
       {/* Card que contém o botão contador */}
       <div className="card">
         {/* Botão com evento onClick: quando clicado, incrementa 'count' em 1 */}
-        <button onClick={() => setCount((c) => c + 1)}>
-          {/* Mostra o valor atual do contador vindo do estado 'count' */}
-          Você clicou {count} vezes
-        </button>
+        <Botao
+          // Os parametros do componente são definidos dentro do componente  
+          texto={`Você clicou ${count} vezes`}
+          funcaoClick={() => setCount(count + 1)}
+        /> 
       </div>
 
       {/* Card que contém o campo de texto para digitar o nome */}
